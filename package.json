@@ -32,7 +32,6 @@
     "test": "genie test"
   },
   "dependencies": {
-    "@dashkite/katana": "^0.3.1",
     "@pandastrike/garden": "^8.0.0-alpha.1",
     "panda-river": "^6.0.0"
   },
@@ -40,7 +39,6 @@
     "@dashkite/brick": "0.0.3",
     "@dashkite/genie": "0.0.1",
     "amen": "^3.0.0",
-    "diff": "^4.0.2",
     "source-map-support": "^0.5.19"
   }
 }
