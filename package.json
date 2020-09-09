@@ -1,0 +1,46 @@
+{
+  "name": "@dashkite/stylist",
+  "version": "0.0.1",
+  "description": "High level interface for managing stylesheets",
+  "keywords": [],
+  "homepage": "https://github.com/dashkite/stylist#readme",
+  "bugs": {
+    "url": "https://github.com/dashkite/stylist/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashkite/stylist.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "contributors": [
+    {
+      "name": "Dan Yoder",
+      "email": "dan@dashkite.com"
+    },
+    {
+      "name": "David Harper",
+      "email": "david@dashkite.com"
+    }
+  ],
+  "main": "build/src/index.js",
+  "main:coffee": "src/index.coffee",
+  "files": [
+    "build/src",
+    "src"
+  ],
+  "scripts": {
+    "test": "genie test"
+  },
+  "dependencies": {
+    "@dashkite/katana": "^0.3.1",
+    "@pandastrike/garden": "^8.0.0-alpha.1",
+    "panda-river": "^6.0.0"
+  },
+  "devDependencies": {
+    "@dashkite/brick": "0.0.3",
+    "@dashkite/genie": "0.0.1",
+    "amen": "^3.0.0",
+    "diff": "^4.0.2",
+    "source-map-support": "^0.5.19"
+  }
+}
