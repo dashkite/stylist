@@ -39,6 +39,8 @@
     "@dashkite/brick": "0.0.3",
     "@dashkite/genie": "0.0.1",
     "amen": "^3.0.0",
+    "coffeescript": "^2.5.1",
+    "panda-quill": "^5.0.0",
     "source-map-support": "^0.5.19"
   }
 }
