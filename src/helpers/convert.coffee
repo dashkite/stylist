@@ -11,6 +11,7 @@ _style = (text) ->
   r = document.createElement "style"
   r.textContent = text
   r.dataset.hash = hash text
+  r.dataset.carbonSkip = "prepend"
   r
 
 
