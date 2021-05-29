@@ -1,5 +1,5 @@
-import {curry, wrap, pipe} from "@pandastrike/garden"
-import {select, each} from "panda-river"
+import {curry, wrap, pipe} from "@dashkite/joy/function"
+import {select, each} from "@dashkite/joy/iterable"
 
 find = curry (predicate, array) -> array.find predicate
 
