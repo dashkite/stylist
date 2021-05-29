@@ -1,4 +1,4 @@
-import {curry} from "@pandastrike/garden"
+import {curry} from "@dashkite/joy/function"
 import {memoize} from "./memoize"
 import {hash} from "./hash"
 

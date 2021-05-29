@@ -1,4 +1,4 @@
-import {memo, sync, style, stylesheet, diff} from "./helpers"
+import {memo, style, stylesheet, diff} from "./helpers"
 
 class Sheets
 

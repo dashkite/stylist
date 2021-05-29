@@ -6,3 +6,7 @@ presets:
   update: null
   release: null
   esm: null
+  pug:
+    import-map:
+      "@dashkite/amen": latest
+      "@dashkite/assert": latest
