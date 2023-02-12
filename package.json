@@ -37,15 +37,15 @@
     "test": "genie test"
   },
   "dependencies": {
-    "@dashkite/joy": "^0.3.6"
+    "@dashkite/joy": "^0.3.16",
+    "construct-style-sheets-polyfill": "^3.1.0"
   },
   "devDependencies": {
-    "@dashkite/amen": "^0.1.2",
-    "@dashkite/amen-console": "^0.0.1",
-    "@dashkite/assert": "^0.1.0",
-    "@dashkite/genie": "0.4.1",
-    "@dashkite/genie-presets": "^0.1.13",
-    "coffeescript": "^2.5.1"
-  },
-  "main:coffee": "src/index.coffee"
+    "@dashkite/amen": "^0.2.0",
+    "@dashkite/amen-console": "^0.0.2",
+    "@dashkite/assert": "^0.1.4",
+    "@dashkite/genie": "0.5.11",
+    "@dashkite/genie-presets": "link:../genie-presets",
+    "coffeescript": "^2.7.0"
+  }
 }
