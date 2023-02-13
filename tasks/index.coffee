@@ -1,29 +1,12 @@
 import * as t from "@dashkite/genie"
 import preset from "@dashkite/genie-presets"
-import browse from "@dashkite/genie-presets/browse"
 
 preset t
 
-import assert from "@dashkite/assert"
-import { test } from "@dashkite/amen"
-import print from "@dashkite/amen-console"
-
-import * as _ from "@dashkite/joy"
-import * as k from "@dashkite/katana"
-import * as m from "@dashkite/mimic"
-
-t.after "build", "pug:with-import-map"
-
-t.define "test", [ "build" ], browse ({browser, port}) ->
-
-  do m.launch browser, [
-    m.page
-    m.goto "http://localhost:#{port}/"
-    m.waitFor -> window.__test?
-    m.evaluate -> window.__test
-    k.peek (result) ->
-      try
-        print result
-      catch error
-        console.log error.message
-  ]
+# avoid loading genie-modules unless we're actually publishing
+# because genie-modules uses graphene-core which relies on polaris
+t.define "publish", ->
+  # TODO rewrite as dynamic import when we move to ESM in Node
+  { default: modules } = require "@dashkite/genie-modules"
+  modules t
+  t.run "modules:publish"
