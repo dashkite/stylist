@@ -36,16 +36,15 @@
     "test": "genie test"
   },
   "dependencies": {
-    "@dashkite/joy": "^0.3.16",
-    "construct-style-sheets-polyfill": "^3.1.0"
+    "@dashkite/joy": "^0.3.16"
   },
   "devDependencies": {
     "@dashkite/amen": "^0.2.0",
     "@dashkite/amen-console": "^0.0.2",
     "@dashkite/assert": "^0.1.4",
-    "@dashkite/genie": "0.5.11",
+    "@dashkite/genie": "0.7.3",
+    "@dashkite/genie-coffee": "link:../genie-coffee",
     "@dashkite/genie-modules": "link:../genie-modules",
-    "@dashkite/genie-presets": "link:../genie-presets",
     "coffeescript": "^2.7.0"
   }
 }
