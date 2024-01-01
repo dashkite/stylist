@@ -23,7 +23,7 @@ generic bind,
   ( Type.isType CSSStyleSheet ),
   Fn.identity
 
-style = Fn.curry ( root, sheets ) ->
+sheets = Fn.curry ( root, sheets ) ->
   root.adoptedStyleSheets = sheets.map bind
       
-export { style }
+export { sheets }
