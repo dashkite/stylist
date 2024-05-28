@@ -4,23 +4,14 @@ import { generic } from "@dashkite/joy/generic"
 
 isURL = ( value ) -> value?.startsWith "https://"
 
-# we rely on the CSS string itself as the Map key
-# the idea is that if you import text css, you
-# will always return the same string...
-cache = new Map
-
 bind = generic name: "bind"
 
 generic bind,
   Type.isString,
-  ( css ) -> 
-    if cache.has css
-      cache.get css
-    else
-      stylesheet = new CSSStyleSheet
-      stylesheet.replaceSync css
-      cache.set css, stylesheet
-      stylesheet
+  Fn.memoize ( css ) -> 
+    stylesheet = new CSSStyleSheet
+    stylesheet.replaceSync css
+    stylesheet
 
 generic bind,
   ( Type.isType CSSStyleSheet ),
