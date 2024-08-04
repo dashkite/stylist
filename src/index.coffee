@@ -4,6 +4,11 @@ import { generic } from "@dashkite/joy/generic"
 
 isURL = ( value ) -> value?.startsWith "https://"
 
+fetchText = Fn.flow [
+  ( url ) -> fetch url
+  ( response ) -> do response.text 
+]
+
 bind = generic name: "bind"
 
 generic bind,
@@ -19,8 +24,7 @@ generic bind,
 
 generic bind,
   isURL,
-  Fn.memoize ( url ) ->
-    bind await do ( await fetch url ).text
+  Fn.memoize ( url ) -> bind await fetchText url
 
 sheets = Fn.curry ( root, sheets ) ->
 
