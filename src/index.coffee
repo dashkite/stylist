@@ -26,19 +26,20 @@ generic bind,
   isURL,
   Fn.memoize ( url ) -> bind await fetchText url
 
-sheets = Fn.curry ( root, sheets ) ->
-
+getCandidates = ( sheets ) ->
   candidates = ( bind sheet for sheet in sheets )
+  stylesheets: candidates.filter Type.isType CSSStyleSheet
+  promises: candidates.filter Type.isPromise
 
-  # segment synchrously obtained stylesheets
-  # so they can be applied immediately...
-  root.adoptedStyleSheets = candidates.filter ( Type.isType CSSStyleSheet )
+sheets = Fn.curry ( root, sheets ) ->
+  { stylesheets, promises } = getCandidates sheets
+  root.adoptedStyleSheets = stylesheets
+  root.adoptedStyleSheets.push ( await Promise.all promises  )...
 
-  # any promise-returning binds will be applied
-  # as they resolve
-  root.adoptedStyleSheets = [
-    root.adoptedStyleSheets...
-    ( await Promise.all candidates.filter Type.isPromise )...
-  ]
-      
-export { sheets }
+
+add = Fn.curry ( root, sheets ) ->
+  { stylesheets, promises } = getCandidates sheets
+  root.adoptedStyleSheets.push stylesheets...
+  root.adoptedStyleSheets.push ( await Promise.all promises  )...
+
+export { sheets, add }
