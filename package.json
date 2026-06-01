@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/stylist",
-  "version": "0.7.22",
+  "version": "0.7.23",
   "description": "High level interface for managing stylesheets",
   "keywords": [],
   "homepage": "https://github.com/dashkite/stylist#readme",
