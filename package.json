@@ -24,7 +24,8 @@
   ],
   "exports": {
     ".": {
-      "browser": "./build/browser/src/index.js"
+      "browser": "./build/browser/src/index.js",
+      "node": "./build/node/src/index.js"
     }
   },
   "files": [
@@ -37,11 +38,10 @@
     "release": "genie release"
   },
   "dependencies": {
-    "@dashkite/joy": "0.7.0"
+    "@dashkite/joy": "0.12.40"
   },
   "devDependencies": {
-
-    "@dashkite/amen": "0.5.0",
+    "@dashkite/amen": "0.9.30",
     "@dashkite/amen-console": "0.4.0",
     "@dashkite/assert": "0.3.0",
     "@dashkite/genie": "0.20.14",
@@ -50,6 +50,5 @@
     "@dashkite/genie-module": "link:../genie-module",
     "@dashkite/genie-release": "0.5.0",
     "coffeescript": "2.7.0"
-
   }
 }
