@@ -1,8 +1,13 @@
 import assert from "@dashkite/assert"
-import * as a from "@dashkite/amen"
-import * as c from "@dashkite/stylist"
+import { test, success } from "@dashkite/amen"
+import print from "@dashkite/amen-console"
 
 do ->
 
-  window.__test = await a.test "Stylist", [
+  print await test "Stylist", [
+
+    test "todo"
+
   ]
+
+  process.exit if success then 0 else 1
