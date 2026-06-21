@@ -24,13 +24,11 @@
   ],
   "exports": {
     ".": {
-      "browser": "./build/browser/src/index.js",
-      "node": "./build/node/src/index.js"
+      "browser": "./build/browser/src/index.js"
     }
   },
   "files": [
-    "build/browser/src",
-    "build/node/src"
+    "build/browser/src"
   ],
   "scripts": {
     "build": "genie build",
